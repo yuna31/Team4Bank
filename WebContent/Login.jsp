@@ -7,7 +7,7 @@
 <title>Welcome PNU IPS</title>
 </head>
 <body>
-	<h1> PNU IPS 로그인 </h1> 
+	<h1> Team4Bank </h1> 
 	<br />
 	<form action="LoginConfirm.jsp" method="post">
 	<table border="0">
@@ -22,6 +22,5 @@
    	<button> 로그인 </button>  <span> <input type="button" value="회원가입" onClick="location.href='Sign.jsp'"> </span>
    	</form>
    	<br/>
-   	<input type="button" value="CSV IMPORT" onClick="location.href='CsvImport.jsp'"> <input type="button" value="ADMIN PAGE" onClick="location.href='AdminPage.jsp'">
 </body>
 </html>
