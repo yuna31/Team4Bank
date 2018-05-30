@@ -1,0 +1,49 @@
+<div><html>
+	<head>
+		<title>Register</title>
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		
+	</head>
+
+	<style>
+			body{
+				text-align: center;
+				top: 50%;
+	   			margin-top: 280px;
+			}
+		
+	</style>
+	<body>
+		<!--   show messages and comments -->
+		<div class="container">
+			<div class="row centered-form">
+		        <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+		        	<div class="panel panel-default">
+				    	<div class="panel-heading">
+				    		<h3 class="panel-title">Login</h3>
+				 		</div>
+				    	<div class="panel-body">
+				    		<form role="form" action="/login" method='post'>
+				    			<div class="form-group">
+				    				<input type="text" name="id" id="id" class="form-control input-sm" placeholder="id">
+				    			</div>
+				    			<div class="row">
+				    				<div class="col-xs-6 col-sm-6 col-md-6">
+				    					<div class="form-group">
+				    						<input type="password" name="password" id="password" class="form-control input-sm" placeholder="Password">
+				    					</div>
+				    				</div>
+				    			</div>
+				    			<input type="submit" value="Login" class="btn btn-info btn-block">
+				    		</form>
+				    	</div>
+				    	<div class="panel-heading">
+				    		<a href="/register">Register</a>
+				    	</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+</div>

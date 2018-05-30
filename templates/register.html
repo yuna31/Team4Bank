@@ -1,0 +1,70 @@
+<html>
+	<head>
+		<title>Register</title>
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	</head>
+
+		<style>
+			body{
+				text-align: center;
+				top: 50%;
+	   			margin-top: 280px;
+			}
+		
+		</style>
+
+	<body>
+		<div class="container">
+		    <div class="row centered-form">
+		        <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+		        	<div class="panel panel-default">
+		        		<div class="panel-heading">
+					    	<h3 class="panel-title">Register Member</h3>
+					 	</div>
+					 		<div class="panel-body">
+						 		{% with messages = get_flashed_messages() %}
+			    				{% if messages %}
+			    				{% for message in messages %}
+			    				<p>{{message}}</p>
+			    				{% endfor %}
+					    		{% endif %}
+					    		{% endwith %}
+					    		<form role="form" action="/register" method='post' class="register_form">
+					    			<div class="row"><!-- first name and last_name-->
+					    				<div class="col-xs-6 col-sm-6 col-md-6">
+					    					<div class="form-group"><!-- first_name -->
+												<input type="text" name="name" id="name" class="form-control input-sm floatlabel" placeholder="Name">
+					    					</div>
+					    				</div>
+					    				<div class="col-xs-6 col-sm-6 col-md-6">
+					    					<div class="form-group"><!-- last_name -->
+					    						<input type="text" name="id" id="id" class="form-control input-sm" placeholder="id">
+					    					</div>
+					    				</div>
+					    			</div>
+					    			<div class="form-group"><!-- email -->
+					    				<input type="email" name="email" id="email" class="form-control input-sm" placeholder="Email Address">
+					    			</div>
+					    			<div class="row">
+					    				<div class="col-xs-6 col-sm-6 col-md-6"><!-- passsword -->
+					    					<div class="form-group">
+					    						<input type="password" name="password" id="password" class="form-control input-sm" placeholder="Password">
+					    					</div>
+					    				</div>
+					    				<div class="col-xs-6 col-sm-6 col-md-6">
+					    					<div class="form-group"><!-- password confirm -->
+					    						<input type="password" name="password_confirmation" id="password_confirmation" class="form-control input-sm" placeholder="Confirm Password">
+					    					</div>
+					    				</div>
+					    			</div>
+					    			<input type="submit" value="Register" class="btn btn-info btn-block">
+					    		</form>
+					    	</div>
+			    		</div>
+		    		</div>
+		    	</div>
+		 </div>
+	</body>
+</html>
+</div>
