@@ -1,5 +1,17 @@
 from flask import Flask,render_template,redirect,request,session,flash
 import re
+import pymysql
+
+
+conn=pymysql.connect(
+	host='localhost',
+	user='root',
+	password='a',
+	db='user',
+	charset='utf8'
+)
+
+curs=conn.cursor()
 
 
 app=Flask(__name__)
@@ -7,28 +19,10 @@ app=Flask(__name__)
 app.secret_key="2342asfkjawesld234kfjsld123111"
 
 
-All_user=[]
-now_user=0
+now_user=""
 
 EMAIL_REGEX=re.compile(r'^[a-zA-Z0-9\.\+_-]+@[a-zA-Z0-9\._-]+\.[a-zA-Z]*$')
 
-
-class account:
-	def __init__ (self):
-		self.number= None
-		self.money=None
-		self.history=None
-
-class user_format(account):
-    def __init__(self,name,Id, email, password):
-    	account.__init__(self)
-        self.name=name
-        self.Id=Id
-        self.email=email
-        self.password=password
-
-
-All_user.append(user_format("han", "hans", "han@naver.com", "1111"))
 
 @app.route('/',methods=['GET'])
 def index():
@@ -66,7 +60,8 @@ def register():
 		new_email=request.form['email']
 		new_password=request.form['password']
 
-		All_user.append(user_format(new_name,new_Id,new_email,new_password) ) 
+		sql="INSERT INTO userinfor (name, id, pw, email) VALUES('{}', '{}','{}','{}')".format(new_name, new_Id, new_password, new_email)
+		curs.execute(sql)
 
 		return redirect("/")
 
@@ -75,18 +70,18 @@ def login():
 	login_id=request.form['id']
 	login_password=request.form['password']
 
-	print (len(All_user))
+	sql="SELECT name FROM userinfor WHERE id='{}' AND pw='{}'".format(login_id, login_password)
+	curs.execute(sql)
+	login_re=curs.fetchall()
 
-	num=0
+	if not login_re :
+		flash('invaild input ! ')
+		return redirect("/")
 
-	for i in All_user:
-		if i.Id==login_id and i.password==login_password :
-			global now_user
-			now_user=num
-			return render_template('/home.html')
-		++num
-	flash('invaild input ! ')
-	return redirect("/")
+	global now_user
+	now_user=login_re
+
+	return render_template('/home.html')
 
 @app.route('/logout', methods=['POST'])
 def logout():
@@ -94,6 +89,7 @@ def logout():
 
 @app.route('/mybank', methods=['POST'])
 def mybank():
+	global now_user
 	return render_template("/my_bank.html")
 
 @app.route('/makebank', methods=['POST'])
@@ -102,7 +98,7 @@ def makebank():
 
 @app.route('/checkbank', methods=['POST'])
 def checkbank():
-	return render_template("/check_bank.html", my_bank=All_user[now_user])
+	return render_template("/check_bank.html")
 
 @app.route('/transferbank', methods=['POST'])
 def transferbank():

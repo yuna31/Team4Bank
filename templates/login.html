@@ -23,6 +23,14 @@
 				    		<h3 class="panel-title">Login</h3>
 				 		</div>
 				    	<div class="panel-body">
+				    		{% with messages = get_flashed_messages() %}
+			    			{% if messages %}
+			    			{% for message in messages %}
+			    			<p>{{message}}</p>
+			    			{% endfor %}
+					    	{% endif %}
+					    	{% endwith %}
+					    	
 				    		<form role="form" action="/login" method='post'>
 				    			<div class="form-group">
 				    				<input type="text" name="id" id="id" class="form-control input-sm" placeholder="id">

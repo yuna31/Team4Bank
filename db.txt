@@ -1,0 +1,26 @@
+use user
+
+
+CREATE TABLE `userinfor` (
+`num` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL,
+  `id` varchar(100) NOT NULL,
+  `pw` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  PRIMARY KEY (num)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE `accountinfor` (
+`num` int(11) NOT NULL,
+  `user` varchar(100) NOT NULL,
+  `accountid` varchar(100) NOT NULL,
+  `accountpw` varchar(100) NOT NULL,
+  `money` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (num)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+insert into userinfor (name, id, pw, email) values('han', 'hans12312', 'tjdqls0826', 'hans12312@naver.com')
+
+
