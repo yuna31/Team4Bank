@@ -21,6 +21,6 @@ CREATE TABLE `accountinfor` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
-insert into userinfor (name, id, pw, email) values('han', 'hans12312', 'tjdqls0826', 'hans12312@naver.com')
+insert into userinfor (name, id, pw, email) values('han', 'hans12312', '', 'hans12312@naver.com')
 
 
