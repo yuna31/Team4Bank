@@ -1,0 +1,35 @@
+<div><html>
+	<head>
+		<title>Register</title>
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		
+	</head>
+
+	<style>
+			body{
+				text-align: center;
+				top: 50%;
+	   			margin-top: 280px;
+			}
+		
+	</style>
+	<body>
+		<p>hello! {{now_user_name}}</p>
+		<p>{{choice_account}}</p>
+
+		<br>
+
+		{% for t in transfer_infor %}
+			<tr>
+				<td> {{ t.date }} </td>
+				<td> {{ t.what }} </td>
+				<td> {{ t.who }} </td>
+				<td> {{ t.money }} </td>
+				<td> {{ t.sum }} </td>
+				<br>
+			</tr>
+		{% endfor %}
+
+	</body>
+</html>
+</div>

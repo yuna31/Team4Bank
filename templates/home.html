@@ -14,6 +14,7 @@
 		
 	</style>
 	<body>
+		<p>hello! {{now_user_name}}</p>
 
 		<form id="logout" action="/logout" method='POST'>
 			<input type="submit" value="Logout" class="btn btn-info btn-block">
@@ -21,6 +22,14 @@
 
 		<form id="mybank" action="/mybank" method='POST'>
 			<input type="submit" value="Mybank" class="btn btn-info btn-block">
+		</form>
+
+		<form id="myloan" action="/myloan" method='POST'>
+			<input type="submit" value="My loan" class="btn btn-info btn-block">
+		</form>
+
+		<form id="go_change_myinfor" action="/go_change_myinfor" method='POST'>
+			<input type="submit" value="change my information" class="btn btn-info btn-block">
 		</form>
 	</body>
 </html>

@@ -15,8 +15,8 @@
 	</style>
 	<body>
 
-	{% for account in now_accounts %}
-		<form id="account_work" action="/account_work" method='GET'> 
+	{% for account in now_loan_accounts %}
+		<form id="account_work" action="/account_work" method='POST'> 
 			<input style="border:0px" name="account" value={{account[2]}}> 
 			<p> Money : {{account[4]}} </p>		
 			<input type="submit" name="transfer" value="transfer">

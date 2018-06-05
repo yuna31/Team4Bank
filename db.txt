@@ -1,3 +1,5 @@
+mysql -u root -p
+
 use user
 
 
@@ -12,8 +14,9 @@ CREATE TABLE `userinfor` (
 
 
 CREATE TABLE `accountinfor` (
-`num` int(11) NOT NULL,
+`num` int(11) NOT NULL AUTO_INCREMENT,
   `user` varchar(100) NOT NULL,
+  `id` varchar(100) NOT NULL,
   `accountid` varchar(100) NOT NULL,
   `accountpw` varchar(100) NOT NULL,
   `money` int(11) NOT NULL DEFAULT '0',
@@ -21,6 +24,42 @@ CREATE TABLE `accountinfor` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
+alter table accountinfor add id varchar(100) NOT NULL; 
+
 insert into userinfor (name, id, pw, email) values('han', 'hans12312', 'tjdqls0826', 'hans12312@naver.com')
 
+insert into accountinfor (user, id, accountid, accountpw, money) values('han', 'hans12312', '100', '0000','1000');
 
+alter table accountinfor modify num int(11) NOT NULL AUTO_INCREMENT;
+
+
+CREATE TABLE `transferinfor` (
+  `num` int(11) NOT NULL AUTO_INCREMENT,
+  `date` varchar(100) NOT NULL,
+  `what` varchar(100) NOT NULL,
+  `sender` varchar(100) NOT NULL,
+  `receiver` varchar(100) NOT NULL,
+  `money` varchar(100) NOT NULL,
+  `sender_sum` varchar(100) NOT NULL,
+  `receiver_sum` varchar(100) NOT NULL,
+  `receiver_account` varchar(100) NOT NULL;
+  `sender_account` varchar(100) NOT NULL;
+  PRIMARY KEY(num)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+alter table transferinfor add sender varchar(100) NOT NULL; 
+alter table transferinfor change who receiver ;
+alter table transferinfor modify receiver varchar(100) NOT NULL;
+insert into transferinfor (date, what, sender, rece)
+
+alter table transferinfor add sender_sum varchar(100) NOT NULL;
+alter table transferinfor add receiver_sum varchar(100) NOT NULL;
+
+insert into transferinfor (date, what, sender, receiver, money, receiver_sum, sender_sum, sender_account, receiver_account) values('5-01','send', 'han', 'kim', '100','100','200', '100', '500')
+
+insert into transferinfor (date, what, sender, receiver, money, receiver_sum, sender_sum, sender_account, receiver_account) values('5-01','send', 'park', 'han', '100','100','200', '200', '100')
+
+alter table transferinfor change receiver_id receiver_account varchar(100) NOT NULL ;
+alter table transferinfor change sender_id sender_account varchar(100) NOT NULL ;
+
+desc table name
