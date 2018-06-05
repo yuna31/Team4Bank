@@ -24,9 +24,13 @@ CREATE TABLE `accountinfor` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
+<<<<<<< HEAD
 alter table accountinfor add id varchar(100) NOT NULL; 
 
 insert into userinfor (name, id, pw, email) values('han', 'hans12312', 'tjdqls0826', 'hans12312@naver.com')
+=======
+insert into userinfor (name, id, pw, email) values('han', 'hans12312', '', 'hans12312@naver.com')
+>>>>>>> origin/master
 
 insert into accountinfor (user, id, accountid, accountpw, money) values('han', 'hans12312', '100', '0000','1000');
 
