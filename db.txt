@@ -24,13 +24,9 @@ CREATE TABLE `accountinfor` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
-<<<<<<< HEAD
 alter table accountinfor add id varchar(100) NOT NULL; 
 
 insert into userinfor (name, id, pw, email) values('han', 'hans12312', 'tjdqls0826', 'hans12312@naver.com')
-=======
-insert into userinfor (name, id, pw, email) values('han', 'hans12312', '', 'hans12312@naver.com')
->>>>>>> origin/master
 
 insert into accountinfor (user, id, accountid, accountpw, money) values('han', 'hans12312', '100', '0000','1000');
 
@@ -46,8 +42,8 @@ CREATE TABLE `transferinfor` (
   `money` varchar(100) NOT NULL,
   `sender_sum` varchar(100) NOT NULL,
   `receiver_sum` varchar(100) NOT NULL,
-  `receiver_account` varchar(100) NOT NULL;
-  `sender_account` varchar(100) NOT NULL;
+  `receiver_account` varchar(100) NOT NULL,
+  `sender_account` varchar(100) NOT NULL,
   PRIMARY KEY(num)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

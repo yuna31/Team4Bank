@@ -16,6 +16,10 @@
 	<body>
 		<p>hello! {{now_user_name}}</p>
 
+		<form id="login" action="/login" method='POST'>
+			<input type="submit" value="Login" class="btn btn-info btn-block">
+		</form>
+
 		<form id="logout" action="/logout" method='POST'>
 			<input type="submit" value="Logout" class="btn btn-info btn-block">
 		</form>
@@ -31,6 +35,15 @@
 		<form id="go_change_myinfor" action="/go_change_myinfor" method='POST'>
 			<input type="submit" value="change my information" class="btn btn-info btn-block">
 		</form>
+
+		<form id="change_money" action="/change_money" method='POST'>
+			<input type="submit" value="change money" class="btn btn-info btn-block">
+		</form>
+
+		<form id="oversea_transfer" action="/oversea_transfer" method='POST'>
+			<input type="submit" value="oversea transfer" class="btn btn-info btn-block">
+		</form>
+
 	</body>
 </html>
 </div>

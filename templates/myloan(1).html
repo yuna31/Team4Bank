@@ -15,7 +15,7 @@
 	</style>
 	<body>
 
-	{% for account in now_accounts %}
+	{% for account in now_laccounts %}
 		<form id="account_work" action="/account_work" method='POST'> 
 			<input style="border:0px" name="account" value={{account[2]}}> 
 			<p> Money : {{account[4]}} </p>		
